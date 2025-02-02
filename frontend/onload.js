@@ -49,11 +49,13 @@ window.onload = async () => {
   const fragment = new URLSearchParams(window.location.search);
   const code = fragment.get("code");
 
+  document.getElementById("login").href = DISCORD_LOGIN_URL;
+
   if (!code && !accessToken) {
     // if no code and no token (not logged in),
     // show button "Login with Discord"
     document.getElementById("login").style.display = `block`;
-    document.getElementById("login").href = DISCORD_LOGIN_URL;
+
     document.getElementById("logout").style.display = `none`;
     return;
   }
